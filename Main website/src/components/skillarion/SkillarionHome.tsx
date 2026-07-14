@@ -443,7 +443,7 @@ const HERO_STATS = [
 
 function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden bg-[var(--navy-deep)] pt-24 pb-20 md:pt-32 md:pb-32 text-white">
+    <section id="home" className="relative overflow-hidden bg-[var(--navy-deep)] pt-25 pb-20 md:pt-50 md:pb-32 text-white">
       <HeroVideoBackground videoFit="contain" overlayClassName="bg-transparent" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-5 md:px-8">
