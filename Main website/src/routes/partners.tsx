@@ -164,36 +164,6 @@ export function PartnersContent() {
         subtitle="120+ industry leaders, academic institutions and global companies working with us to bridge the gap between learning and employment."
       />
 
-      {/* Strategic Partner */}
-      <section id="featured-partner" className="bg-background py-20">
-        <div className="mx-auto max-w-5xl px-5 md:px-8">
-          <div className="relative overflow-hidden rounded-3xl border border-[var(--gold)]/30 bg-gradient-to-br from-[var(--gold)]/10 via-card to-card p-10 md:p-14">
-            <div className="flex flex-col items-start gap-6 md:flex-row md:items-center">
-              <div className="grid h-20 w-20 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-[var(--navy)] to-[var(--navy-deep)] text-[var(--gold-soft)]">
-                <Brain className="h-9 w-9" />
-              </div>
-              <div className="flex-1">
-                <span className="inline-block rounded-full bg-[var(--gold)]/15 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-[var(--gold)]">
-                  Strategic Technical Partner
-                </span>
-                <h2 className="mt-3 font-display text-3xl font-semibold md:text-4xl">Kodryx AI</h2>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
-                  Our strategic technical partner powering cutting-edge AI and technology solutions. Kodryx AI
-                  brings expertise in artificial intelligence, machine learning, and advanced software
-                  development to enhance our training programs.
-                </p>
-                <Link
-                  to="/contact"
-                  className="mt-6 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[var(--gold)] to-[var(--gold-soft)] px-6 py-3 text-sm font-semibold text-[var(--navy-deep)] shadow-[0_10px_24px_-12px_rgba(201,168,76,0.7)] transition-transform hover:-translate-y-0.5"
-                >
-                  Learn More
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* 120+ Categories */}
       <section id="partners" className="bg-secondary py-20">
