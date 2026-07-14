@@ -1,5 +1,4 @@
-import { useEffect, useRef } from "react";
-import heroVideo from "@/assets/logo-animation.mp4.asset.json";
+import { useEffect, useRef, useState } from "react";
 
 export function HeroVideoBackground({
   overlayClassName = "bg-black/30",
@@ -19,14 +18,23 @@ export function HeroVideoBackground({
   }, []);
 
   return (
-    <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+    <div
+      aria-hidden
+      className="pointer-events-none absolute inset-0 overflow-hidden"
+    >
       {videoFit === "contain" ? (
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="relative w-full max-w-full" style={{ aspectRatio: "16 / 9" }}>
+        <div className="absolute inset-0 flex items-center pb-48 justify-center md:pb-0 md:justify-end md:-mr-[2%] lg:-mr-[2%]">
+          <div 
+            className="relative w-full max-w-xl lg:max-w-3xl xl:max-w-4xl aspect-video opacity-40 md:opacity-100 mix-blend-screen"
+            style={{ 
+              maskImage: "radial-gradient(ellipse at center, black 45%, transparent 70%)",
+              WebkitMaskImage: "radial-gradient(ellipse at center, black 45%, transparent 70%)",
+            }}
+          >
             <video
               ref={ref}
-              className="absolute inset-0 h-full w-full object-contain"
-              src={heroVideo.url}
+              className="absolute inset-0 h-full w-full rounded-[4rem] object-cover md:object-contain"
+              src="/Skillarion_Development_logo_reveal.mp4"
               autoPlay
               muted
               playsInline

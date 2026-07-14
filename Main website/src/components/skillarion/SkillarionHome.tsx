@@ -188,10 +188,10 @@ const NAV_LINKS: NavLink[] = [
     to: "/",
     sections: [
       { label: "Hero", hash: "home" },
-      { label: "About", hash: "about" },
-      { label: "Partners", hash: "partners" },
-      { label: "Services", hash: "services" },
-      { label: "Subscription Model", hash: "courses" },
+      { label: "About", hash: "section-about" },
+      { label: "Services", hash: "section-services" },
+      { label: "Subscription Model", hash: "section-courses" },
+      { label: "Partners", hash: "section-partners" },
       { label: "Testimonials", hash: "testimonials" },
       { label: "Contact", hash: "contact" },
     ],
@@ -443,8 +443,8 @@ const HERO_STATS = [
 
 function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden hero-gradient pt-32 pb-32 text-white">
-      <HeroVideoBackground overlayClassName="bg-[var(--navy-deep)]/70" />
+    <section id="home" className="relative overflow-hidden bg-[var(--navy-deep)] pt-24 pb-20 md:pt-32 md:pb-32 text-white">
+      <HeroVideoBackground videoFit="contain" overlayClassName="bg-transparent" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-5 md:px-8">
         <Reveal>
