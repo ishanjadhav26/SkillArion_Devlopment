@@ -28,7 +28,6 @@ export function HeroVideoBackground({
               className="absolute inset-0 h-full w-full object-contain"
               src={heroVideo.url}
               autoPlay
-              loop
               muted
               playsInline
               preload="auto"
@@ -42,7 +41,6 @@ export function HeroVideoBackground({
           className="absolute inset-0 h-full w-full object-cover"
           src={heroVideo.url}
           autoPlay
-          loop
           muted
           playsInline
           preload="auto"

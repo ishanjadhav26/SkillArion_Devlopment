@@ -197,10 +197,13 @@ const NAV_LINKS: NavLink[] = [
     ],
   },
   {
-    label: "Subscription Model",
-    to: "/courses",
+    label: "About",
+    to: "/about",
     sections: [
-      { label: "Subscription Plan", hash: "courses" },
+      { label: "What We Offer", hash: "features" },
+      { label: "Vision, Mission & Goal", hash: "vision-mission" },
+      { label: "Core Values", hash: "values" },
+      { label: "Our Team", hash: "team" },
     ],
   },
   {
@@ -214,6 +217,13 @@ const NAV_LINKS: NavLink[] = [
       { label: "Curriculum", hash: "curriculum" },
       { label: "Eligibility", hash: "eligibility" },
       { label: "FAQ", hash: "faq" },
+    ],
+  },
+  {
+    label: "Subscription Model",
+    to: "/courses",
+    sections: [
+      { label: "Subscription Plan", hash: "courses" },
     ],
   },
   {
@@ -237,25 +247,42 @@ const NAV_LINKS: NavLink[] = [
       { label: "Campus", hash: "campus" },
     ],
   },
-  {
-    label: "About",
-    to: "/about",
-    sections: [
-      { label: "What We Offer", hash: "features" },
-      { label: "Vision, Mission & Goal", hash: "vision-mission" },
-      { label: "Core Values", hash: "values" },
-      { label: "Our Team", hash: "team" },
-    ],
-  },
 ];
 
 function Header() {
   const [open, setOpen] = useState(false);
   const [openMobileIdx, setOpenMobileIdx] = useState<number | null>(null);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState<string | null>(null);
   const { theme, toggle } = useTheme();
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 24);
+      if (window.location.pathname !== "/") {
+         setActiveSection(null);
+         return;
+      }
+      const sections = [
+        { id: "section-home", path: "/" },
+        { id: "section-about", path: "/about" },
+        { id: "section-services", path: "/services" },
+        { id: "section-courses", path: "/courses" },
+        { id: "section-partners", path: "/partners" },
+        { id: "section-gallery", path: "/gallery" },
+      ];
+      let current = "/";
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sections[i].id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= window.innerHeight / 3) {
+            current = sections[i].path;
+            break;
+          }
+        }
+      }
+      setActiveSection(current);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -301,16 +328,19 @@ function Header() {
                 to={l.to}
                 activeOptions={{ exact: true }}
                 activeProps={{
-                  className:
-                    "text-[var(--gold)] font-bold data-[status=active]:[&>span.nav-underline]:w-full",
+                  className: activeSection === null ? "text-[var(--gold)] font-bold data-[status=active]:[&>span.nav-underline]:w-full" : "",
                 }}
-                className="relative inline-flex items-center gap-1 whitespace-nowrap text-sm font-medium text-foreground/80 transition-colors hover:text-[var(--gold)]"
+                className={`relative inline-flex items-center gap-1 whitespace-nowrap text-sm font-medium transition-colors hover:text-[var(--gold)] ${
+                  activeSection === l.to
+                    ? "text-[var(--gold)] font-bold [&>span.nav-underline]:w-full"
+                    : "text-foreground/80"
+                }`}
               >
                 {l.label}
                 <svg className="h-3 w-3 opacity-60 transition-transform group-hover:rotate-180" viewBox="0 0 20 20" fill="currentColor"><path d="M5.5 7.5l4.5 5 4.5-5z" /></svg>
                 <span className="nav-underline absolute -bottom-1.5 left-0 h-0.5 w-0 bg-[var(--gold)] transition-all duration-300 group-hover:w-full" />
               </Link>
-              <div className="pointer-events-none invisible absolute left-1/2 top-full z-50 mt-3 w-56 -translate-x-1/2 rounded-xl border border-border bg-background p-2 opacity-0 shadow-[0_18px_40px_-20px_rgba(40,40,90,0.35)] transition-all duration-200 group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100">
+              <div className="pointer-events-none invisible absolute left-1/2 top-full z-50 mt-3 w-56 -translate-x-1/2 rounded-xl border border-border bg-background p-2 opacity-0 shadow-[0_18px_40px_-20px_rgba(40,40,90,0.35)] transition-all duration-200 group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100 before:absolute before:-top-3 before:left-0 before:h-3 before:w-full">
                 {l.sections.map((s) => (
                   <Link
                     key={s.hash}
@@ -1299,23 +1329,64 @@ function useHashScroll() {
 
 
 
+export function MentorCTA() {
+  return (
+    <section className="bg-secondary py-20">
+      <div className="mx-auto max-w-5xl px-5 md:px-8">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[var(--navy)] to-[var(--navy-deep)] p-10 text-white md:p-14">
+          <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-[var(--gold)]/20 blur-3xl" />
+          <div className="relative">
+            <h2 className="font-display text-3xl font-semibold md:text-4xl">
+              Become a Mentor or Resource Person?
+            </h2>
+            <p className="mt-5 max-w-2xl text-white/75">
+              Are you ready to make a difference? We are seeking passionate professionals to become mentors and
+              resource persons to inspire the next generation of leaders. Join our program to share your
+              experience, expand your network and leave a lasting legacy. Apply now and help shape the future.
+            </p>
+            <Link
+              to="/contact"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[var(--gold)] to-[var(--gold-soft)] px-7 py-3.5 text-sm font-semibold text-[var(--navy-deep)] shadow-[0_12px_30px_-10px_rgba(201,168,76,0.7)] transition-transform hover:-translate-y-0.5"
+            >
+              Apply Now
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export function SkillarionHome() {
   return (
     <SkillarionLayout>
-      <Hero />
-      <WeStandOut />
-      <AtAGlance />
-      <Why />
-      <AboutContent />
-      <ServicesContent />
-      <Subscription />
-      <MoU />
-      <PartnersContent />
-      <GalleryContent />
-      <HowItWorks />
-      <Testimonials />
-      <Contact />
+      <div id="section-home">
+        <Hero />
+        <WeStandOut />
+        <AtAGlance />
+        <Why />
+        <MentorCTA />
+      </div>
+      <div id="section-about">
+        <AboutContent />
+      </div>
+      <div id="section-services">
+        <ServicesContent />
+      </div>
+      <div id="section-courses">
+        <Subscription />
+        <MoU />
+      </div>
+      <div id="section-partners">
+        <PartnersContent />
+      </div>
+      <div id="section-gallery">
+        <GalleryContent />
+        <HowItWorks />
+        <Testimonials />
+        <Contact />
+      </div>
     </SkillarionLayout>
   );
 }

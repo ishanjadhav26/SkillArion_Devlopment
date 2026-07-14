@@ -228,31 +228,6 @@ export function ServicesContent() {
 
 
 
-      {/* Mentor CTA */}
-      <section className="bg-secondary py-20">
-        <div className="mx-auto max-w-5xl px-5 md:px-8">
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[var(--navy)] to-[var(--navy-deep)] p-10 text-white md:p-14">
-            <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-[var(--gold)]/20 blur-3xl" />
-            <div className="relative">
-              <h2 className="font-display text-3xl font-semibold md:text-4xl">
-                Become a Mentor or Resource Person?
-              </h2>
-              <p className="mt-5 max-w-2xl text-white/75">
-                Are you ready to make a difference? We are seeking passionate professionals to become mentors and
-                resource persons to inspire the next generation of leaders. Join our program to share your
-                experience, expand your network and leave a lasting legacy. Apply now and help shape the future.
-              </p>
-              <Link
-                to="/contact"
-                className="mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[var(--gold)] to-[var(--gold-soft)] px-7 py-3.5 text-sm font-semibold text-[var(--navy-deep)] shadow-[0_12px_30px_-10px_rgba(201,168,76,0.7)] transition-transform hover:-translate-y-0.5"
-              >
-                Apply Now
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Branch-wise Technology Stack */}
       <section id="tech-stack" className="bg-background py-20">

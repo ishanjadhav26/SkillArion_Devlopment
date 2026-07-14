@@ -158,65 +158,30 @@ export function AboutContent() {
         </div>
       </section>
 
-      <section id="founding-team" className="bg-background py-24">
-        <div className="mx-auto max-w-6xl px-5 md:px-8">
-          <div className="text-center">
-            <span className="inline-flex rounded-full bg-[var(--gold)]/15 px-4 py-1.5 text-xs font-semibold text-[var(--gold)]">
+      <section id="founding-team" className="bg-background pt-24 pb-12">
+        <div className="mx-auto max-w-4xl px-5 md:px-8">
+          <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-10 text-center shadow-[0_12px_32px_-24px_rgba(40,40,90,0.25)] md:p-14">
+            <span className="inline-flex rounded-full bg-[var(--gold)]/10 px-4 py-1.5 text-xs font-semibold text-[var(--gold)]">
               Leadership
             </span>
-            <h2 className="mt-4 font-display text-4xl font-semibold md:text-5xl">
+            <h2 className="mt-4 font-display text-3xl font-semibold md:text-4xl">
               Founding <span className="text-[var(--gold)]">Team</span>
             </h2>
-            <p className="mx-auto mt-5 max-w-3xl text-sm leading-7 text-muted-foreground md:text-base">
+            <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-muted-foreground md:text-base">
               SkillArion Development is led by a passionate, multi-disciplinary founding team with complementary strengths across
               AI research, deep learning, IoT systems, and business strategy. The leadership combines deep technical expertise
               with commercial acumen — a pairing that enables the company to translate cutting-edge research into market-ready,
               scalable technology products.
             </p>
-            <p className="mt-4 text-[0.7rem] font-bold uppercase tracking-[0.2em] text-[var(--gold)]">
+            <p className="mt-8 text-[0.75rem] font-bold uppercase tracking-[0.2em] text-[var(--gold)]">
               Note on Innovativeness
             </p>
-          </div>
-
-          <div className="mt-14 grid gap-6 lg:grid-cols-2">
-            {founders.map((f) => (
-              <article
-                key={f.name}
-                className="flex h-full flex-col rounded-2xl border border-border bg-card p-8 shadow-[0_12px_32px_-24px_rgba(40,40,90,0.35)]"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="grid h-14 w-14 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-[var(--navy)] to-[var(--navy-deep)] font-display text-xl font-semibold text-[var(--gold-soft)]">
-                    {f.initials}
-                  </div>
-                  <div>
-                    <h3 className="font-display text-xl font-semibold leading-tight text-foreground">{f.name}</h3>
-                    <p className="mt-1 text-sm font-semibold text-[var(--gold)]">{f.role}</p>
-                  </div>
-                </div>
-                <p className="mt-6 text-sm leading-7 text-muted-foreground">{f.bio}</p>
-                <div className="mt-6 rounded-xl bg-secondary p-5">
-                  <p className="text-[0.7rem] font-bold uppercase tracking-[0.18em] text-foreground/70">
-                    Key Responsibilities
-                  </p>
-                  <ul className="mt-3 space-y-2.5">
-                    {f.responsibilities.map((r) => (
-                      <li key={r.label} className="flex gap-2.5 text-sm leading-relaxed text-muted-foreground">
-                        <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[var(--gold)]" />
-                        <span>
-                          <span className="font-semibold text-foreground">{r.label}</span> — {r.detail}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </article>
-            ))}
           </div>
         </div>
       </section>
 
 
-      <section id="cta" className="bg-background py-28">
+      <section id="cta" className="bg-background pt-12 pb-28">
         <div className="mx-auto max-w-6xl px-5 md:px-8">
           <div className="text-center">
             <span className="inline-flex rounded-full bg-[var(--gold)]/10 px-4 py-1.5 text-xs font-semibold text-[var(--gold)]">
@@ -322,30 +287,5 @@ const achievements = [
     icon: Medal,
     title: "120+ Industry Partners",
     description: "Strong network of companies providing internships and job opportunities.",
-  },
-];
-
-const founders = [
-  {
-    initials: "KV",
-    name: "Kunukuntla Vinod Kumar",
-    role: "Founder & AI Research Lead",
-    bio: "Kunukuntla Vinod Kumar is the Founder of SkillArion Development and serves as the company's primary AI Research Lead. He drives the technical vision behind the Animal Emotion Detection & Protection System, leading all research and development activities in Artificial Intelligence, Machine Learning, and IoT systems design. His work spans deep learning architecture design, NLP/NLG model development, and embedded AI deployment — forming the technological foundation of the Smart Collar innovation.",
-    responsibilities: [
-      { label: "AI/ML Research", detail: "model design, training, and deployment across classification tasks." },
-      { label: "Deep Learning & NLP", detail: "CNN-LSTM architectures, natural language generation, acoustic modelling." },
-      { label: "IoT Systems", detail: "ESP32 embedded firmware, sensor integration, edge AI inference." },
-    ],
-  },
-  {
-    initials: "KP",
-    name: "Kunukuntla Pradeep",
-    role: "Co-Founder & Business Strategy Lead",
-    bio: "Kunukuntla Pradeep is the Co-Founder and Business Strategy Lead of SkillArion Development. He is responsible for translating the company's technology innovations into commercially viable market propositions. His mandate spans market research, brand positioning, institutional partnerships, and end-to-end commercialisation strategy — ensuring that the Smart Collar and SkillArion's broader product portfolio achieve maximum market reach, revenue impact, and investor recognition.",
-    responsibilities: [
-      { label: "Market Research", detail: "competitive analysis, customer segmentation, pricing strategy." },
-      { label: "Branding & Partnerships", detail: "institutional tie-ups, co-branding, veterinary and government alliances." },
-      { label: "Commercialisation & Growth Strategy", detail: "go-to-market planning, revenue model execution, investor outreach." },
-    ],
   },
 ];
