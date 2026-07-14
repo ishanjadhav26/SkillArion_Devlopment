@@ -15,39 +15,26 @@ export const Route = createFileRoute("/gallery")({
   component: GalleryPage,
 });
 
-type Item = { src: string; alt: string; category: "Workshops" | "Events" | "Campus" };
+type Item = { src: string; alt: string; category: "Workshops" | "Events" | "Campus"; contain?: boolean };
 
 const ITEMS: Item[] = [
-  { category: "Workshops", alt: "Gallery Image", src: "/gallery/WhatsApp Image 2026-06-29 at 6.25.36 PM (1).jpeg" },
-  { category: "Workshops", alt: "Gallery Image", src: "/gallery/WhatsApp Image 2026-06-29 at 6.25.36 PM.jpeg" },
-  { category: "Workshops", alt: "Gallery Image", src: "/gallery/WhatsApp Image 2026-06-29 at 6.25.37 PM (1).jpeg" },
-  { category: "Workshops", alt: "Gallery Image", src: "/gallery/WhatsApp Image 2026-06-29 at 6.25.37 PM.jpeg" },
-  { category: "Workshops", alt: "Gallery Image", src: "/gallery/WhatsApp Image 2026-06-29 at 6.25.38 PM (1).jpeg" },
-  { category: "Workshops", alt: "Gallery Image", src: "/gallery/WhatsApp Image 2026-06-29 at 6.25.38 PM (2).jpeg" },
-  { category: "Workshops", alt: "Gallery Image", src: "/gallery/WhatsApp Image 2026-06-29 at 6.25.38 PM.jpeg" },
-  { category: "Workshops", alt: "Gallery Image", src: "/gallery/WhatsApp Image 2026-06-29 at 6.25.58 PM.jpeg" },
-  { category: "Workshops", alt: "Gallery Image", src: "/gallery/WhatsApp Image 2026-06-29 at 6.27.40 PM (1).jpeg" },
-  { category: "Workshops", alt: "Gallery Image", src: "/gallery/WhatsApp Image 2026-06-29 at 6.27.40 PM (2).jpeg" },
-  { category: "Events", alt: "Gallery Image", src: "/gallery/WhatsApp Image 2026-06-29 at 6.27.40 PM (3).jpeg" },
-  { category: "Events", alt: "Gallery Image", src: "/gallery/WhatsApp Image 2026-06-29 at 6.27.40 PM.jpeg" },
-  { category: "Events", alt: "Gallery Image", src: "/gallery/WhatsApp Image 2026-06-29 at 6.27.41 PM (1).jpeg" },
-  { category: "Events", alt: "Gallery Image", src: "/gallery/WhatsApp Image 2026-06-29 at 6.27.41 PM.jpeg" },
-  { category: "Events", alt: "Gallery Image", src: "/gallery/WhatsApp Image 2026-06-29 at 6.27.42 PM (1).jpeg" },
-  { category: "Events", alt: "Gallery Image", src: "/gallery/WhatsApp Image 2026-06-29 at 6.27.42 PM (2).jpeg" },
-  { category: "Events", alt: "Gallery Image", src: "/gallery/WhatsApp Image 2026-06-29 at 6.27.42 PM (3).jpeg" },
-  { category: "Events", alt: "Gallery Image", src: "/gallery/WhatsApp Image 2026-06-29 at 6.27.42 PM (4).jpeg" },
-  { category: "Events", alt: "Gallery Image", src: "/gallery/WhatsApp Image 2026-06-29 at 6.27.42 PM.jpeg" },
-  { category: "Events", alt: "Gallery Image", src: "/gallery/WhatsApp Image 2026-06-29 at 6.27.51 PM.jpeg" },
-  { category: "Campus", alt: "Gallery Image", src: "/gallery/WhatsApp Image 2026-06-29 at 6.27.53 PM (1).jpeg" },
-  { category: "Campus", alt: "Gallery Image", src: "/gallery/WhatsApp Image 2026-06-29 at 6.27.53 PM (2).jpeg" },
-  { category: "Campus", alt: "Gallery Image", src: "/gallery/WhatsApp Image 2026-06-29 at 6.27.53 PM (3).jpeg" },
-  { category: "Campus", alt: "Gallery Image", src: "/gallery/WhatsApp Image 2026-06-29 at 6.27.53 PM (4).jpeg" },
-  { category: "Campus", alt: "Gallery Image", src: "/gallery/WhatsApp Image 2026-06-29 at 6.27.53 PM (5).jpeg" },
-  { category: "Campus", alt: "Gallery Image", src: "/gallery/WhatsApp Image 2026-06-29 at 6.27.53 PM (6).jpeg" },
-  { category: "Campus", alt: "Gallery Image", src: "/gallery/WhatsApp Image 2026-06-29 at 6.27.53 PM (7).jpeg" },
-  { category: "Campus", alt: "Gallery Image", src: "/gallery/WhatsApp Image 2026-06-29 at 6.27.53 PM (8).jpeg" },
-  { category: "Campus", alt: "Gallery Image", src: "/gallery/WhatsApp Image 2026-06-29 at 6.27.53 PM (9).jpeg" },
-  { category: "Campus", alt: "Gallery Image", src: "/gallery/WhatsApp Image 2026-06-29 at 6.27.53 PM.jpeg" },
+  { category: "Workshops", alt: "Hands-on Workshop", src: "/gallery/WhatsApp Image 2026-06-29 at 6.25.36 PM (1).jpeg" },
+  { category: "Workshops", alt: "Technical Training", src: "/gallery/WhatsApp Image 2026-06-29 at 6.25.36 PM.jpeg" },
+  { category: "Workshops", alt: "Student Workshop", src: "/gallery/WhatsApp Image 2026-06-29 at 6.25.37 PM.jpeg" },
+  { category: "Workshops", alt: "Workshop Session", src: "/gallery/WhatsApp Image 2026-06-29 at 6.25.58 PM.jpeg" },
+  { category: "Events", alt: "Industry Event", src: "/gallery/WhatsApp Image 2026-06-29 at 6.27.40 PM (3).jpeg" },
+  { category: "Events", alt: "Tech Conference", src: "/gallery/WhatsApp Image 2026-06-29 at 6.27.41 PM (1).jpeg" },
+  { category: "Events", alt: "Event Highlights", src: "/gallery/WhatsApp Image 2026-06-29 at 6.27.42 PM (4).jpeg" },
+  { category: "Campus", alt: "Campus Visit", src: "/gallery/WhatsApp Image 2026-06-29 at 6.27.53 PM (2).jpeg" },
+  { category: "Campus", alt: "College Program", src: "/gallery/WhatsApp Image 2026-06-29 at 6.27.53 PM (3).jpeg" },
+  { category: "Campus", alt: "Student Activities", src: "/gallery/WhatsApp Image 2026-06-29 at 6.27.53 PM (5).jpeg" },
+  { category: "Workshops", alt: "Practical Session", src: "/new/WhatsApp Image 2026-07-14 at 12.52.58 PM.jpeg" },
+  { category: "Workshops", alt: "Training Program", src: "/new/WhatsApp Image 2026-07-14 at 12.52.58 PM (1).jpeg" },
+  { category: "Events", alt: "Corporate Seminar", src: "/new/WhatsApp Image 2026-07-14 at 12.52.58 PM (2).jpeg" },
+  { category: "Events", alt: "Event Presentation", src: "/new/WhatsApp Image 2026-07-14 at 12.52.59 PM.jpeg", contain: true },
+  { category: "Campus", alt: "University Partnership", src: "/new/WhatsApp Image 2026-07-14 at 12.52.59 PM (1).jpeg" },
+  { category: "Campus", alt: "Campus Connect", src: "/new/WhatsApp Image 2026-07-14 at 12.53.00 PM.jpeg" },
+  { category: "Campus", alt: "Student Interaction", src: "/new/WhatsApp Image 2026-07-14 at 12.53.00 PM (1).jpeg" },
 ];
 
 const CATEGORIES: Array<Item["category"]> = ["Workshops", "Events", "Campus"];
@@ -96,7 +83,7 @@ export function GalleryContent() {
                       src={item.src}
                       alt={item.alt}
                       loading="lazy"
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className={`h-full w-full transition-transform duration-500 group-hover:scale-105 ${item.contain ? "object-contain bg-[var(--navy)]/5" : "object-cover"}`}
                     />
                   </div>
                   <figcaption className="px-4 py-3 text-sm text-foreground/80">{item.alt}</figcaption>

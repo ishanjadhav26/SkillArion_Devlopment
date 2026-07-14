@@ -419,7 +419,7 @@ function Hero() {
       <div className="relative z-10 mx-auto max-w-7xl px-5 md:px-8">
         <Reveal>
           <h1 className="max-w-4xl font-display text-4xl font-semibold leading-[1.1] sm:text-5xl md:text-6xl">
-            Bridging the Gap Between Academia <em className="text-[var(--gold-soft)] not-italic">&amp; Industry</em>
+            Introducing Bridging between industry and academia at <em className="text-[var(--gold-soft)] not-italic">Bridging academia to industry excellence</em>
           </h1>
         </Reveal>
         <Reveal delay={120}>
@@ -1183,7 +1183,7 @@ function ScrollToTop() {
       type="button"
       aria-label="Scroll to top"
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className={`fixed bottom-6 left-6 z-50 grid h-11 w-11 place-items-center rounded-full bg-[var(--gold)] text-[var(--navy-deep)] shadow-[0_10px_24px_-8px_rgba(201,168,76,0.7)] transition-all duration-300 hover:-translate-y-1 ${
+      className={`fixed bottom-6 right-6 z-50 grid h-11 w-11 place-items-center rounded-full bg-[var(--gold)] text-[var(--navy-deep)] shadow-[0_10px_24px_-8px_rgba(201,168,76,0.7)] transition-all duration-300 hover:-translate-y-1 ${
         show ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"
       }`}
     >
