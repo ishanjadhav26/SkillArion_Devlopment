@@ -174,7 +174,7 @@ function useTheme() {
     root.classList.toggle("dark", theme === "dark");
     try {
       localStorage.setItem("sk-theme", theme);
-    } catch {}
+    } catch { }
   }, [theme]);
   return { theme, toggle: () => setTheme((t) => (t === "dark" ? "light" : "dark")) };
 }
@@ -259,8 +259,8 @@ function Header() {
     const onScroll = () => {
       setScrolled(window.scrollY > 24);
       if (window.location.pathname !== "/") {
-         setActiveSection(null);
-         return;
+        setActiveSection(null);
+        return;
       }
       const sections = [
         { id: "section-home", path: "/" },
@@ -294,9 +294,8 @@ function Header() {
   ];
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/90 backdrop-blur-md shadow-[0_1px_0_rgba(0,0,0,0.05)]" : "bg-background/70 backdrop-blur"
-      }`}
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/90 backdrop-blur-md shadow-[0_1px_0_rgba(0,0,0,0.05)]" : "bg-background/70 backdrop-blur"
+        }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 md:px-8">
         <div className="flex items-center gap-5">
@@ -330,11 +329,10 @@ function Header() {
                 activeProps={{
                   className: activeSection === null ? "text-[var(--gold)] font-bold data-[status=active]:[&>span.nav-underline]:w-full" : "",
                 }}
-                className={`relative inline-flex items-center gap-1 whitespace-nowrap text-sm font-medium transition-colors hover:text-[var(--gold)] ${
-                  activeSection === l.to
+                className={`relative inline-flex items-center gap-1 whitespace-nowrap text-sm font-medium transition-colors hover:text-[var(--gold)] ${activeSection === l.to
                     ? "text-[var(--gold)] font-bold [&>span.nav-underline]:w-full"
                     : "text-foreground/80"
-                }`}
+                  }`}
               >
                 {l.label}
                 <svg className="h-3 w-3 opacity-60 transition-transform group-hover:rotate-180" viewBox="0 0 20 20" fill="currentColor"><path d="M5.5 7.5l4.5 5 4.5-5z" /></svg>
@@ -449,7 +447,7 @@ function Hero() {
       <div className="relative z-10 mx-auto max-w-7xl px-5 md:px-8">
         <Reveal>
           <h1 className="max-w-4xl font-display text-4xl font-semibold leading-[1.1] sm:text-5xl md:text-6xl">
-            Introducing Bridging between industry and academia at <em className="text-[var(--gold-soft)] not-italic">Bridging academia to industry excellence</em>
+            <em className="text-[var(--gold-soft)] not-italic">Bridging academia to industry excellence</em>
           </h1>
         </Reveal>
         <Reveal delay={120}>
@@ -1000,63 +998,63 @@ function Contact() {
             </div>
           </Reveal>
 
-        <Reveal delay={150}>
-          <form
-            onSubmit={onSubmit}
-            className="rounded-3xl border border-white/15 bg-white/[0.06] p-7 backdrop-blur-md md:p-8"
-          >
-            <div className="grid gap-4 sm:grid-cols-2">
-              <Field label="Name">
-                <input
-                  value={form.name}
-                  onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
-                  required
-                  className="contact-input"
-                  placeholder="Your full name"
-                />
-              </Field>
-              <Field label="Phone">
-                <input
-                  value={form.phone}
-                  onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
-                  className="contact-input"
-                  placeholder="Optional"
-                />
-              </Field>
-            </div>
-            <div className="mt-4">
-              <Field label="Email">
-                <input
-                  type="email"
-                  value={form.email}
-                  onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
-                  required
-                  className="contact-input"
-                  placeholder="you@example.com"
-                />
-              </Field>
-            </div>
-            <div className="mt-4">
-              <Field label="Message">
-                <textarea
-                  value={form.message}
-                  onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
-                  required
-                  rows={4}
-                  className="contact-input resize-none"
-                  placeholder="How can we help?"
-                />
-              </Field>
-            </div>
-            <button
-              type="submit"
-              disabled={submitting}
-              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[var(--gold)] to-[var(--gold-soft)] px-6 py-3.5 text-sm font-semibold text-[var(--navy-deep)] shadow-[0_12px_30px_-10px_rgba(201,168,76,0.7)] transition-transform hover:-translate-y-0.5 disabled:opacity-60"
+          <Reveal delay={150}>
+            <form
+              onSubmit={onSubmit}
+              className="rounded-3xl border border-white/15 bg-white/[0.06] p-7 backdrop-blur-md md:p-8"
             >
-              {submitting ? "Sending…" : (<><Send className="h-4 w-4" /> Send Message</>)}
-            </button>
-          </form>
-        </Reveal>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <Field label="Name">
+                  <input
+                    value={form.name}
+                    onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
+                    required
+                    className="contact-input"
+                    placeholder="Your full name"
+                  />
+                </Field>
+                <Field label="Phone">
+                  <input
+                    value={form.phone}
+                    onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
+                    className="contact-input"
+                    placeholder="Optional"
+                  />
+                </Field>
+              </div>
+              <div className="mt-4">
+                <Field label="Email">
+                  <input
+                    type="email"
+                    value={form.email}
+                    onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
+                    required
+                    className="contact-input"
+                    placeholder="you@example.com"
+                  />
+                </Field>
+              </div>
+              <div className="mt-4">
+                <Field label="Message">
+                  <textarea
+                    value={form.message}
+                    onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
+                    required
+                    rows={4}
+                    className="contact-input resize-none"
+                    placeholder="How can we help?"
+                  />
+                </Field>
+              </div>
+              <button
+                type="submit"
+                disabled={submitting}
+                className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[var(--gold)] to-[var(--gold-soft)] px-6 py-3.5 text-sm font-semibold text-[var(--navy-deep)] shadow-[0_12px_30px_-10px_rgba(201,168,76,0.7)] transition-transform hover:-translate-y-0.5 disabled:opacity-60"
+              >
+                {submitting ? "Sending…" : (<><Send className="h-4 w-4" /> Send Message</>)}
+              </button>
+            </form>
+          </Reveal>
         </div>
       </div>
 
@@ -1213,9 +1211,8 @@ function ScrollToTop() {
       type="button"
       aria-label="Scroll to top"
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className={`fixed bottom-6 right-6 z-50 grid h-11 w-11 place-items-center rounded-full bg-[var(--gold)] text-[var(--navy-deep)] shadow-[0_10px_24px_-8px_rgba(201,168,76,0.7)] transition-all duration-300 hover:-translate-y-1 ${
-        show ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"
-      }`}
+      className={`fixed bottom-6 right-6 z-50 grid h-11 w-11 place-items-center rounded-full bg-[var(--gold)] text-[var(--navy-deep)] shadow-[0_10px_24px_-8px_rgba(201,168,76,0.7)] transition-all duration-300 hover:-translate-y-1 ${show ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"
+        }`}
     >
       <ArrowRight className="h-5 w-5 -rotate-90" />
     </button>
