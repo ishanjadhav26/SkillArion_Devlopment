@@ -27,7 +27,7 @@ const ITEMS: Item[] = [
   { category: "Events", alt: "Event Highlights", src: "/gallery/WhatsApp Image 2026-06-29 at 6.27.42 PM (4).jpeg" },
   { category: "Campus", alt: "Campus Visit", src: "/gallery/WhatsApp Image 2026-06-29 at 6.27.53 PM (2).jpeg" },
   { category: "Campus", alt: "College Program", src: "/gallery/WhatsApp Image 2026-06-29 at 6.27.53 PM (3).jpeg" },
-  { category: "Campus", alt: "MOU signing", src: "/gallery/WhatsApp Image 2026-06-29 at 6.27.53 PM (5).jpeg" },
+  { category: "Campus", alt: "Student Activities", src: "/gallery/WhatsApp Image 2026-06-29 at 6.27.53 PM (5).jpeg" },
   { category: "Workshops", alt: "MOU signing", src: "/new/WhatsApp Image 2026-07-14 at 12.52.58 PM.jpeg" },
   { category: "Workshops", alt: "MOU signing", src: "/new/WhatsApp Image 2026-07-14 at 12.52.58 PM (1).jpeg" },
   { category: "Events", alt: "Corporate Seminar", src: "/new/WhatsApp Image 2026-07-14 at 12.52.58 PM (2).jpeg" },
