@@ -45,6 +45,7 @@ import { AboutContent } from "@/routes/about";
 import { ServicesContent } from "@/routes/services";
 import { PartnersContent } from "@/routes/partners";
 import { GalleryContent } from "@/routes/gallery";
+import { CareersContent } from "@/routes/careers";
 
 
 
@@ -247,6 +248,16 @@ const NAV_LINKS: NavLink[] = [
       { label: "Campus", hash: "campus" },
     ],
   },
+  {
+    label: "Careers",
+    to: "/careers",
+    sections: [
+      { label: "Open Position", hash: "position" },
+      { label: "Responsibilities & Benefits", hash: "details" },
+      { label: "Why Join?", hash: "why-join" },
+      { label: "Apply Now", hash: "apply-cta" },
+    ],
+  },
 ];
 
 function Header() {
@@ -320,7 +331,8 @@ function Header() {
             </div>
           </div>
         </div>
-        <nav className="hidden items-center gap-6 lg:flex">
+        <div className="flex items-center gap-4">
+          <nav className="hidden items-center gap-3 xl:flex">
           {NAV_LINKS.map((l) => (
             <div key={l.label} className="group relative">
               <Link
@@ -369,15 +381,16 @@ function Header() {
           </Link>
           <button
             onClick={() => setOpen((v) => !v)}
-            className="grid h-10 w-10 place-items-center rounded-md text-foreground lg:hidden"
+            className="grid h-10 w-10 place-items-center rounded-md text-foreground xl:hidden"
             aria-label="Toggle menu"
           >
             <Menu className="h-5 w-5" />
           </button>
         </div>
+        </div>
       </div>
       {open && (
-        <div className="border-t border-border bg-background px-5 py-4 lg:hidden">
+        <div className="border-t border-border bg-background px-5 py-4 xl:hidden">
           <div className="flex flex-col gap-1">
             {NAV_LINKS.map((l, idx) => {
               const isOpen = openMobileIdx === idx;
@@ -1384,6 +1397,10 @@ export function SkillarionHome() {
         <Testimonials />
         <Contact />
       </div>
+      <div id="section-careers">
+        <CareersContent />
+      </div>
+
     </SkillarionLayout>
   );
 }

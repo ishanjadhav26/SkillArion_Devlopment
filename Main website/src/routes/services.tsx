@@ -395,7 +395,7 @@ export function ServicesContent() {
 
 function PageHero({ eyebrow, title, subtitle }: { eyebrow: string; title: string; subtitle: string }) {
   return (
-    <section className="relative overflow-hidden hero-gradient pt-32 pb-20 text-white">
+    <section className="relative overflow-hidden hero-gradient pt-40 pb-20 text-white">
       <div className="relative z-10 mx-auto max-w-5xl px-5 text-center md:px-8">
         <span className="inline-block rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--gold-soft)]">
           {eyebrow}
