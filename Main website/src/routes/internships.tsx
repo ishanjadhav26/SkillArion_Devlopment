@@ -13,6 +13,16 @@ import {
   Cpu,
   Bot,
   Microchip,
+  Sparkles,
+  Atom,
+  Glasses,
+  Blocks,
+  Palette,
+  Car,
+  RadioTower,
+  PenTool,
+  Building2,
+  Zap,
 } from "lucide-react";
 
 export const Route = createFileRoute("/internships")({
@@ -46,46 +56,24 @@ export function InternshipsContent() {
   const [showForm, setShowForm] = useState(false);
 
   const DOMAINS = [
-    {
-      name: "AI & Machine Learning",
-      icon: BrainCircuit,
-      desc: "Dive deep into neural networks, natural language processing, and predictive models.",
-    },
-    {
-      name: "Full Stack Development",
-      icon: Code2,
-      desc: "Master both frontend and backend technologies to build complete web applications.",
-    },
-    {
-      name: "Data Science & Analytics",
-      icon: BarChart4,
-      desc: "Extract meaningful insights from raw data using advanced analytical tools.",
-    },
-    {
-      name: "Cybersecurity",
-      icon: ShieldAlert,
-      desc: "Learn to protect systems, networks, and programs from digital attacks.",
-    },
-    {
-      name: "Cloud Computing & DevOps",
-      icon: Cloud,
-      desc: "Understand cloud infrastructure and modern deployment practices.",
-    },
-    {
-      name: "IoT & Embedded Systems",
-      icon: Cpu,
-      desc: "Connect the physical world with the digital using sensors and microcontrollers.",
-    },
-    {
-      name: "Robotics & Automation",
-      icon: Bot,
-      desc: "Design and program robots to automate complex or repetitive tasks.",
-    },
-    {
-      name: "VLSI & Semiconductor",
-      icon: Microchip,
-      desc: "Explore the design of integrated circuits and semiconductor devices.",
-    },
+    { name: "AI & Machine Learning", icon: BrainCircuit, desc: "Dive deep into neural networks, natural language processing, and predictive models." },
+    { name: "Generative AI & Agentic AI", icon: Sparkles, desc: "Explore the frontiers of artificial intelligence with generative models and autonomous agents." },
+    { name: "Data Science & Data Analytics", icon: BarChart4, desc: "Extract meaningful insights from raw data using advanced analytical tools." },
+    { name: "Full Stack Development", icon: Code2, desc: "Master both frontend and backend technologies to build complete web applications." },
+    { name: "Cybersecurity", icon: ShieldAlert, desc: "Learn to protect systems, networks, and programs from digital attacks." },
+    { name: "Cloud Computing & DevOps", icon: Cloud, desc: "Understand cloud infrastructure and modern deployment practices." },
+    { name: "IoT & Embedded Systems", icon: Cpu, desc: "Connect the physical world with the digital using sensors and microcontrollers." },
+    { name: "Robotics & Automation", icon: Bot, desc: "Design and program robots to automate complex or repetitive tasks." },
+    { name: "VLSI & Semiconductor", icon: Microchip, desc: "Explore the design of integrated circuits and semiconductor devices." },
+    { name: "Quantum Computing", icon: Atom, desc: "Step into the future with quantum algorithms and computing principles." },
+    { name: "AR/VR & Extended Reality", icon: Glasses, desc: "Create immersive digital experiences combining real and virtual environments." },
+    { name: "Blockchain & Web3", icon: Blocks, desc: "Build decentralized applications and explore the future of the internet." },
+    { name: "UI/UX & Product Design", icon: Palette, desc: "Craft intuitive, engaging, and accessible user interfaces and experiences." },
+    { name: "EV & Electric Mobility", icon: Car, desc: "Innovate in the sustainable transportation sector with electric vehicle technology." },
+    { name: "5G & Advanced Communication", icon: RadioTower, desc: "Work with next-generation telecommunications and networking technologies." },
+    { name: "CAD/CAE & Engineering Design", icon: PenTool, desc: "Master computer-aided design and engineering for complex systems." },
+    { name: "BIM & Smart Construction", icon: Building2, desc: "Utilize Building Information Modeling for modern construction and architecture." },
+    { name: "Power Systems & Smart Grid", icon: Zap, desc: "Modernize energy distribution and management with smart grid technologies." },
   ];
 
   return (
