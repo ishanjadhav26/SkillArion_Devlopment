@@ -45,7 +45,7 @@ import { AboutContent } from "@/routes/about";
 import { ServicesContent } from "@/routes/services";
 import { PartnersContent } from "@/routes/partners";
 import { GalleryContent } from "@/routes/gallery";
-import { CareersContent } from "@/routes/careers";
+import { InternshipsContent } from "@/routes/internships";
 
 
 
@@ -249,12 +249,10 @@ const NAV_LINKS: NavLink[] = [
     ],
   },
   {
-    label: "Careers",
-    to: "/careers",
+    label: "Internships",
+    to: "/internships",
     sections: [
-      { label: "Open Position", hash: "position" },
-      { label: "Responsibilities & Benefits", hash: "details" },
-      { label: "Why Join?", hash: "why-join" },
+      { label: "Emerging Domains", hash: "domains" },
       { label: "Apply Now", hash: "apply-cta" },
     ],
   },
@@ -1397,8 +1395,8 @@ export function SkillarionHome() {
         <Testimonials />
         <Contact />
       </div>
-      <div id="section-careers">
-        <CareersContent />
+      <div id="section-internships">
+        <InternshipsContent />
       </div>
 
     </SkillarionLayout>
