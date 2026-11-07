@@ -1,8 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import aicteAsset from "@/assets/aicte.jpg.asset.json";
-import msmeAsset from "@/assets/msme.jpg.asset.json";
-import dpiitAsset from "@/assets/dpiit.jpg.asset.json";
 import { HeroVideoBackground } from "@/components/HeroVideoBackground";
 import {
   ArrowRight,
@@ -296,11 +293,6 @@ function Header() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-  const badges = [
-    { name: "AICTE", src: aicteAsset.url },
-    { name: "MSME", src: msmeAsset.url },
-    { name: "DPIIT", src: dpiitAsset.url },
-  ];
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/90 backdrop-blur-md shadow-[0_1px_0_rgba(0,0,0,0.05)]" : "bg-background/70 backdrop-blur"
@@ -309,25 +301,7 @@ function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 md:px-8">
         <div className="flex items-center gap-5">
           <Logo />
-          <div className="hidden h-10 w-px bg-border md:block" />
-          <div className="hidden items-center gap-3 md:flex">
-            <div className="flex flex-col items-center">
-              <span className="mb-1 text-[0.55rem] font-bold tracking-[0.18em] text-[var(--gold)]">
-                APPROVED BY
-              </span>
-              <div className="flex items-center gap-2">
-                {badges.map((b) => (
-                  <img
-                    key={b.name}
-                    src={b.src}
-                    alt={`${b.name} Approved`}
-                    title={`${b.name} Approved`}
-                    className="h-9 w-9 rounded-full bg-white object-contain p-0.5 ring-1 ring-border"
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
+
         </div>
         <div className="flex items-center gap-4">
           <nav className="hidden items-center gap-3 xl:flex">
